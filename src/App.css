@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  color:whitesmoke;
+}
+
+.introBox {
+ text-align: center;
+ color: whitesmoke;
+ text-shadow: white;
+ font-size: calc(4px + 2vmin);
+ width: 65%;
+ padding: 8px;
 }
 
 .App-logo {
@@ -8,31 +18,73 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(12px + 2vmin);
+    color: rgb(165, 11, 11);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes beatingheart 
+{
+  50%
+  {
+    transform: scale( 2.3 );
+  }
+  75%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( 2.5 );
+  }
+
 }
 
-.App-link {
-  color: #61dafb;
+#heartbeat {
+  animation-name: beatingheart;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-direction: alternate-reverse;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.apiDocsWrap {
+  width:75%;
+}
+.resource {
+  background-color: aliceblue;
+  
+}
+
+.apiHeader {
+  background-color: white;
+  color: black;
+}
+
+a.toggle {
+  color: #333333;
+  font: 16px helvetica;
+  padding: 4px;
+}
+
+.apiHeader {
+  color: #333333;
+  font: 12px Arial;
+  background-color: gray;
+  padding: 10px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
