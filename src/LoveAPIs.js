@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
-import ReactDOM from "react-dom"; 
+import React, {Component} from 'react';
 
-class LoveAPI extends Component {
-    get show() {
-        return this.props.activeSection === "LoveAPI";
-    }
-   
-    
-  
-    render() {
-      if (this.show) {
-          return <div className="LoveAPI"> 
-                    <ul > 
-                        <li> 
-                            <div>
-                              <h4> Love API </h4>
-                              <span> <a> A Gathering Of Love! </a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                               <h4>Flirty Quotes:</h4>
-                               <span> <a> A Gathering Of Love! </a></span>
-                            </div>
-                        </li>
-                  </ul>
-                </div>;
-      } else {
-          return <div className="hide"> </div>;
-      }
-  }
+
+
+class LoveAPI extends React.Component{
+
+   state = {showingLove: false,  };
+
+
+    render () {
+      const {showingLove } = this.state;
+      return (
+       <div  > 
+          <h2  style={{ color:'white'}}  > Love API </h2>
+         <div onClick ={() => this.setState({ showingLove: !showingLove })}> 
+            <h3 style={{ color:'slate'}} > Methods: </h3> 
+         </div>
+         <div>
+             <ul style={{ display: (showingLove ? 'block' : 'none' ) }} > 
+                 < li > Quote of the Day </li>
+                 < li > Random Quote </li>
+                 < li > Request 10 Quotes </li>
+             </ul >
+         </div>
+       </div>
+    )}
 }
-
-
+  
 export default LoveAPI;
 

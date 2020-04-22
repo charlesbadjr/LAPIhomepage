@@ -81,10 +81,10 @@ a.toggle {
   padding: 10px;
 }
 
-.show {
-  display: block;
+.opsParent {
+  background-color: slategray;
+  color: black;
+  font: 12px arial;
+  align-content: flex-start;
 }
 
-.hide {
-  display: none;
-}

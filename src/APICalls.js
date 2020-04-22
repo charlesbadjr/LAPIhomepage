@@ -1,17 +1,18 @@
-import React from 'react';
-import axios from 'react-axios';
+import {useState, useEffect} from 'react';
 
 
-function APICALLs {
-
-    APICALL() {
-        axios.get(`https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/read`).then(res => {
-            const quotes = res.data;
-            this.setState({quotes});
-        })
-    }
-}
+export default function useFetch(url) {
+  const [data, setData ] = useState([]);
 
 
+    useEffect(() => {
+        fetch(url)
+        .then(response => response.json())
+        .then(data => setData(data));
+    }, []);
+    
+    return data;
+};
 
-export default APICALLs;
+
+
