@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 
-class LoveAPI extends React.Component{
+class LoveAPI extends Component{
 
    state = {showingLove: false,  };
 
@@ -10,16 +10,30 @@ class LoveAPI extends React.Component{
     render () {
       const {showingLove } = this.state;
       return (
-       <div  > 
-          <h2  style={{ color:'white'}}  > Love API </h2>
-         <div onClick ={() => this.setState({ showingLove: !showingLove })}> 
-            <h3 style={{ color:'slate'}} > Methods: </h3> 
-         </div>
-         <div>
+       <div  onClick ={() => this.setState({ showingLove: !showingLove })} > 
+          <h2  style={{ color:'white', textAlign:'left' }}  > Love API </h2>
+         <div >
              <ul style={{ display: (showingLove ? 'block' : 'none' ) }} > 
-                 < li > Quote of the Day </li>
-                 < li > Random Quote </li>
-                 < li > Request 10 Quotes </li>
+                 < li > 
+                    <div>
+                        <h4>Quote of the Day </h4>
+                    </div>
+                    <div>
+                       <span> <a> LoveQuote Endpoint slash Quote Of the Day </a> </span>
+                    </div>
+                 </li>
+                 < li > 
+                       Random Quote 
+                    <div>
+                      
+                    </div>
+                 </li>
+                 
+                 < li > Request 10 Quotes 
+                    <div >
+
+                    </div>
+                 </li>
              </ul >
          </div>
        </div>

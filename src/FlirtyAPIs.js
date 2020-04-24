@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom"; 
+
 
 
 
 class FlirtyAPI extends Component {
-    get show() {
-        return this.props.activeSection === "FlirtyAPI";
-    }
-   
-    
+    state = { showingFlirty: false }
   
     render() {
-      if (this.show) {
-          return <div className="FlirtyAPI"> 
-                    <ul > 
+         const { showingFlirty } = this.state;
+
+          return ( 
+               <div className="FlirtyAPI"  onClick ={() => this.setState({ showingFlirty: !showingFlirty })} > 
+                    <ul style={{ display: (showingFlirty ? 'block' : 'none' ) }}> 
                         <li> 
-                            <div>
-                              <h4> Motivational API </h4>
-                              <span> <a> Get Off Your Ass </a></span>
+                            <div >
+                              <h4> Flirty API </h4>
+                              <span> <a> A collection to help those who are "Flirty Impaired" </a></span>
                             </div>
                         </li>
                         <li>
@@ -47,12 +45,10 @@ class FlirtyAPI extends Component {
                            </ul>
                         </li>
                   </ul>
-                </div>;
-      } else {
-          return <div className="hide"> </div>;
-      }
-  }
-}
+                </div>
+      
+   )}
+ }
 
 
 export default FlirtyAPI;
