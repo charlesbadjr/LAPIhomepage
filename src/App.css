@@ -1,4 +1,5 @@
 .App {
+  background-color: #282c34;
   text-align: center;
   color:whitesmoke;
 }
@@ -9,13 +10,20 @@
  text-shadow: white;
  font-size: calc(4px + 2vmin);
  width: 65%;
- padding: 8px;
+ padding: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.apiDocsHeader {
+  text-align: center;
+  color: whitesmoke;
+  background-color: #130b46;
+  text-shadow: white;
+  font-size: calc(4px + 2vmin);
+  width: 100%;
+  
+ }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-header {
@@ -55,14 +63,12 @@
   
 }
 
-.resource {
-  background-color: aliceblue;
-  
-}
 
-.apiHeader {
-  background-color: white;
-  color: black;
+.apiDocsContainer {
+  width: 90%;
+  min-height: 55vh;
+  display: flex;
+  font-size: calc(4px + 2vmin);
 }
 
 a.toggle {
@@ -72,17 +78,73 @@ a.toggle {
 }
 
 .apiHeader {
-  color: #333333;
-  font: 12px Arial;
-  background-color: gray;
-  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-start;
+  color: #856868;
+  background-color: rgb(50, 43, 110);
+
 }
 
 .opsContainer {
   width: 100%;
-  background-color: slategray;
+  background-color: #130b46;
   color: black;
   font: 12px arial;
   text-align: left;
 }
 
+#opsTitle {
+  color: rgb(165, 11, 11);
+  text-align: center;
+  font-size: calc(25px + 2vmin);
+  
+}
+
+#apiTitle {
+  color: white;
+  text-shadow: #333333;
+  text-align: left;
+  font-size: calc(8px + 2vmin);
+
+}
+
+
+
+.methodAndTitleContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+}
+
+.methodAndTitle {
+  display: flex;
+  flex-direction: row;
+  justify-items: first baseline;
+  align-content: stretch;
+}
+
+#methodTitle {
+ color: rebeccapurple;
+ font-size: 15px;
+}
+
+.methodTitleBox {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-self: right;
+
+}
+
+.methodBoxURL {
+ display: flex;
+ flex-direction: row;
+ align-self: flex-end;
+ background-color:white;
+ width: 55vh;
+}
+
+#button {
+  padding: 9px;
+}
