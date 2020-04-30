@@ -1,23 +1,21 @@
 import React, {Component} from 'react';
 
-
-
 class Methods extends Component{
-   state = {showingMethods: false, 
-      
+   state = {showingMethods: false, isLoading: false,
+              quotes:'',
        method:{  methodTitle:'Get All Quotes', url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/',
-                 method:'read' } 
+                 method:'read', number:'4'} 
       
       };
 
-      // I will need to call the method and return xample content.
-     // methodCall=(fun)=> {
-     //   const url = this.state;
-     //   fetch.({url}/{method}){
-     //      response = response.data()=>
-     //      }
-     //      .then
-     // }
+      
+
+      buttonClick = () => {
+         this.setState({ isLoading: true });
+         fetch('https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/read/3')
+         .then(response => response.json() )
+         .then(quotes => this.setState({ quotes: quotes, isLoading:false }));
+      }
 
   render () {
     const {showingMethods } = this.state;
@@ -36,7 +34,8 @@ class Methods extends Component{
                      <div className="methodBoxURL"> 
                          <p> {this.state.method.url}{this.state.method.method} </p> 
                      </div> 
-                     <button id="button"> Get </button>
+                     <button id="button" > Get </button>
+                     
                   </div>
                      
                </div>  
@@ -54,7 +53,7 @@ class Methods extends Component{
                      <div className="methodBoxURL"> 
                          <p> {this.state.method.url}{this.state.method.method} </p> 
                      </div> 
-                     <button id="button"> Get </button>
+                     <button id="button" > Get </button>
                   </div>
                      
                </div>  

@@ -85,15 +85,19 @@ a.toggle {
   background-color: rgb(50, 43, 110);
 
 }
-
+/* holds all below love hub intro */
 .opsContainer {
   width: 100%;
   background-color: #130b46;
-  color: black;
   font: 12px arial;
   text-align: left;
 }
 
+.opsParent {
+  padding: 8px;
+}
+
+/* just says Developers Guide: */
 #opsTitle {
   color: rgb(165, 11, 11);
   text-align: center;
@@ -101,6 +105,7 @@ a.toggle {
   
 }
 
+/* title to each API Love API Flirty and Motivational */
 #apiTitle {
   color: white;
   text-shadow: #333333;
@@ -110,41 +115,42 @@ a.toggle {
 }
 
 
-
+/* this is the whole area below Methods above the next API */
 .methodAndTitleContainer {
-  display: flex;
-  flex-direction: row;
   background-color: aqua;
-}
 
+}
+/*this holds the Method Title Div and the Method Button div */
 .methodAndTitle {
   display: flex;
-  flex-direction: row;
-  justify-items: first baseline;
-  align-content: stretch;
+  justify-content: space-between;
 }
 
 #methodTitle {
  color: rebeccapurple;
  font-size: 15px;
+ padding: 5px;
 }
 
-.methodTitleBox {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-  justify-self: right;
-
-}
-
-.methodBoxURL {
+/* this holds the URL and the Button */
+.methodBox {
  display: flex;
- flex-direction: row;
- align-self: flex-end;
+ align-items: center;
+}
+
+/* this holds the URL. Just a white box sitting next to the button */
+.methodBoxURL {
+ 
  background-color:white;
- width: 55vh;
+ color: black;
+ width: 45vh;
+ height: 3vh;
+ padding: 2px;
 }
 
 #button {
-  padding: 9px;
+
+  padding: auto;
+  height: 3.6vh;
+  width: 5vh;
 }

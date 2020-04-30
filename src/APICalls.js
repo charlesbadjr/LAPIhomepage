@@ -1,18 +1,18 @@
 import React from 'react';
 
 
-export default function useFetch(url) {
-  const [data, setData ] = useState([]);
 
+function APICalls(props) {
+ 
 
-    useEffect(() => {
-        fetch(url)
-        .then(response => response.json())
-        .then(data => setData(data));
-    }, []);
-    
-    return data;
-};
+    return (
+      <ul> 
+         {quotes.map(quotes=> 
+          <li key={quotes.objectID}>
+            <p> {quotes.quotes} </p> <a> {quotes.author}</a>
+          </li> )}
+      </ul>
+    )
+  };
 
-
-
+export default APICalls;
