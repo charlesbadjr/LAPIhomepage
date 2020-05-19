@@ -11,15 +11,15 @@ class Refactortest extends Component {
              description: 'this api helps you when you have no social life',
              selected: false,
              methods: [{
-                name: 'Get All',
-                url:'https://cloudflair/loveapi/',
-                description: 'returns json of all the quotes. Limit of 10 will be returned.'},
+                    name: 'Get All',
+                    url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/read/',
+                    description: 'returns json of all the quotes. Limit of 10 will be returned.'},
                 { name: 'Get Count', 
-                  url: 'https://cloud', 
+                  url: 'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/countAll/', 
                   description: 'endpoint gives you overall count of entries currently in the api' },
                 
                 {name: 'Quote of The Day',
-                 url: 'https://cloudflair/loveapi/qod',
+                 url: 'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/qod/',
                  description: 'Love Quote of the day. Helps you remember what needs to be said, any given day.'
                     }],
          },
@@ -28,15 +28,15 @@ class Refactortest extends Component {
             selected: false, 
             methods: [{
                 name: 'Get All',
-                url:'https://cloudflair/loveapi/',
+                url:'https://us-central1-loveapi.cloudfunctions.net/app/flirtyquotes/read/',
                 description: 'returns json of all the quotes. Limit of 10 will be returned.'},
                 { name: 'Get Count', 
                   url: 'https://cloud', 
                   description: 'endpoint gives you overall count of entries currently in the api' },
                 
                 {name: 'Quote of The Day',
-                 url: 'https://cloudflair/loveapi/qod',
-                 description: 'gives you shit in your face'
+                 url:'https://us-central1-loveapi.cloudfunctions.net/app/flirtyquotes/qod/',
+                 description: 'Renders a Single Quote of the day. You can pass in paramiters to find Quotes of past days'
                     }],
          },
            {name: 'Motivational API',
@@ -59,7 +59,7 @@ class Refactortest extends Component {
     };
 
 
-      handleClick = (e) => {
+      showToggle = (e) => {
           const { apis } = this.state;
           const { id } = e.target; 
           apis[id].selected = !this.state.apis[id].selected
