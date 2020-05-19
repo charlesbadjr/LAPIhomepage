@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
+import Refactortest from './refactortest.js';
 
-class Methods extends Component{
-   state = {showingMethods: false, isLoading: false,
-              quotes:'',
-       method:{  methodTitle:'Get All Quotes', url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes/',
-                 method:'read', number:'4'} 
+class Methods extends Refactortest {
+   state = {showingMethods: true, isLoading: false,
+              quotes:'' 
       
       };
 
@@ -19,20 +18,23 @@ class Methods extends Component{
 
   render () {
     const {showingMethods } = this.state;
-
+     
       return (
        <div onClick ={() => this.setState({ showingMethods: !showingMethods })} > 
-          <h2 > Methods: </h2>
+           <h5 style={{ color: 'white' }}>  {this.apiDescription} </h5>
+           <h2 > Methods: </h2>
+           {this.props.methods.map((m, i) => {
+              return (
 
          <div className="methodAndTitleContainer" >
              <div style={{ display: (showingMethods? 'block' : 'none' ) }} > 
                <div className="methodAndTitle" > 
                   <div className="methodTitleBox" >
-                    <h4 id="methodTitle" > {this.state.method.methodTitle}: </h4>
+                    <h4 id="methodTitle" > {m.name}: </h4>
                   </div>
                   <div className="methodBox" > 
                      <div className="methodBoxURL"> 
-                         <p> {this.state.method.url}{this.state.method.method} </p> 
+                         <p> {m.url} </p> 
                      </div> 
                      <button id="button" > Get </button>
                      
@@ -42,25 +44,7 @@ class Methods extends Component{
 
              </div >
          </div>
-
-         <div className="methodAndTitleContainer" >
-             <div style={{ display: (showingMethods? 'block' : 'none' ) }} > 
-               <div className="methodAndTitle" > 
-                  <div className="methodTitleBox" >
-                    <h4 id="methodTitle" > {this.state.method.methodTitle}: </h4>
-                  </div>
-                  <div className="methodBox" > 
-                     <div className="methodBoxURL"> 
-                         <p> {this.state.method.url}{this.state.method.method} </p> 
-                     </div> 
-                     <button id="button" > Get </button>
-                  </div>
-                     
-               </div>  
-
-             </div >
-         </div>
-
+           )})};
        </div>
     )};
 }

@@ -7,24 +7,29 @@ function MethodComp(props) {
        <div>    
           <h2 > Methods: </h2>
           <div className="methodAndTitleContainer" >
-              <div > 
-                
-              <div className="methodAndTitle" > 
-                   <div className="methodTitleBox" >
-                     <h4 id="methodTitle" > {props.mTitle}: </h4>
-                   </div>
-                   
-                   <div className="methodBox" > 
-                      <div className="methodBoxURL"> 
-                          <p> {props.mUrl}/{props.mMethod}/{props.mNumber} </p> 
-                      </div> 
-                      <button id="button" > Get </button>
-                   </div>
-                   
-                </div>  
-                <div> <ApiDetails author={props.author} body={props.body} /> </div>
-              </div >
-          </div>
+                 {props.method.map((m, i) => {
+                    return (
+                       <div>    
+                        <div className="methodAndTitle" > 
+                           <div className="methodTitleBox" >
+                              <h4 id="methodTitle" > {this.props.methods.name} </h4>
+                           </div>
+                        
+                           <div className="methodBox" > 
+                              <div className="methodBoxURL"> 
+                                 <p> {this.props.methods.url} </p> 
+                              </div> 
+                              <button id="button" > Get </button>
+                           </div>
+                        
+                         </div>  
+                         <div> 
+                           <ApiDetails {...props} /> 
+                         </div>
+                      </div>
+                      );
+                  })}
+          </div > 
        </div>
     );
 }

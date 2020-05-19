@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MethodComp from './MethodComp.js';
-
+import Methods from './Methods.js';
 
 // I can pass method info into the MethodsComponent to reuse it. 
 
@@ -8,17 +8,18 @@ class Operations extends Component {
      state = {showingOps: false, showingLove: false, showingOther: false,
                isLoading: false, quote:'', 
 
-               method:{  methodTitle:'Get All Quotes', 
+               method:[{  methodTitle:'Get Quote By Quote ID', 
                          url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
-                         method:'read', number:'4' }
-            };
+                         method:'read', number:'6'},
+                        { methodTitle:'Get All Quotes', 
+                         url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
+                         method:'read', number:''},
+                         {  methodTitle:'Get The Quote Of The Day', 
+                         url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
+                         method:'read', number:'2'}
+                   ] 
+               };
 
-       toggleOps = () => {
-          this.setState(prevState => ({
-            displayOps: !prevState.displayOps
-          }));
-
-       }  
  
        componentDidMount () {
          this.setState({ isLoading: true });
@@ -46,8 +47,7 @@ class Operations extends Component {
                   </div>
 
               <div style={{ display: (showingLove ? 'block' : 'none' ) }} >
-                 <MethodComp mNumber={this.state.method.number} mMethod={this.state.method.method} mUrl={this.state.method.url} mTitle={this.state.method.methodTitle} 
-                               author={this.state.quote.author} body={this.state.quote.quote} />
+                 <Methods {...this.state.method} />
               </div>
 
               <div className="apiHeader" onClick ={() => this.setState({ showingFlirty: !showingFlirty })} >
@@ -56,8 +56,7 @@ class Operations extends Component {
 
               <div >
                  <div style={{ display: (showingFlirty ? 'block' : 'none' ) }} >
-                    <MethodComp mNumber={this.state.method.number} mMethod={this.state.method.method} mUrl={this.state.method.url} mTitle={this.state.method.methodTitle} 
-                               author={this.state.quote.author} body={this.state.quote.quote} />
+                      <Methods {...this.state.method} />
                  </div>
               </div>
 
@@ -67,7 +66,7 @@ class Operations extends Component {
 
               <div >
                  <div style={{ display: (showingOther ? 'block' : 'none' ) }} >
-                    <MethodComp author={this.state.quote.author} body={this.state.quote.quote} />
+                     <Methods {...this.state.method} />
                  </div>
               </div>
 
