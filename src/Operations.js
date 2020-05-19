@@ -7,17 +7,38 @@ import Methods from './Methods.js';
 class Operations extends Component { 
      state = {showingOps: false, showingLove: false, showingOther: false,
                isLoading: false, quote:'', 
+         apis: [{
+                   name: 'Love Api',
+                   showing: false,
+                   description: "Awesome API that helps you with your Love Owes",
+                   method:[{  name:'Get All Quotes', 
+                           url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
+                            
+                           description:'This endpoint gets upto ten quotes'},
+                         { name:'Get Quote By ID', 
+                           url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
+                            
+                           description:'This method will get a specific Quote by its ID' },
 
-               method:[{  methodTitle:'Get Quote By Quote ID', 
-                         url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
-                         method:'read', number:'6'},
-                        { methodTitle:'Get All Quotes', 
-                         url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
-                         method:'read', number:''},
-                         {  methodTitle:'Get The Quote Of The Day', 
-                         url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
-                         method:'read', number:'2'}
-                   ] 
+                         { name:'Get The Quote Of The Day', 
+                           url:'https://us-central1-loveapi.cloudfunctions.net/app/lovequotes',
+                            
+                           description:'This endpoint will give you the quote of the day to share with your friends'}
+                   ]},
+                   {
+                      name: 'Flirty Api',
+                      showing: false,
+                      description: "This little gem will get you into a bed during the quantine",
+                      method: [{
+                         name: "Get All Quotes",
+                         url: 'https://us-central-loveapi.cloudfunctions.net/app/flirtyapi',
+
+                         description: "You can have all these quotes, atleast 10, with one call ",
+                        },
+                        
+                      }]
+                   }
+                  ]
                };
 
  
