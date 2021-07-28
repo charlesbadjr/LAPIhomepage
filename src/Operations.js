@@ -32,14 +32,11 @@ class Operations extends Component {
                       method: [{
                          name: "Get All Quotes",
                          url: 'https://us-central-loveapi.cloudfunctions.net/app/flirtyapi',
-
-                         description: "You can have all these quotes, atleast 10, with one call ",
-                        },
-                        
+                         description: "You can have all these quotes, atleast 10, with one call "
                       }]
                    }
-                  ]
-               };
+            
+         ]};
 
  
        componentDidMount () {
